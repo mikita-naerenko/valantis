@@ -20,6 +20,7 @@ export async function sendRequest(data, retries = 0) {
             body: JSON.stringify(data)
         });
         if (!response.ok) {
+            console.log(response);
             throw new Error('Failed to fetch data');
         }
         return await response.json();
